@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "lib": ["es2023"],
+    "module": "ESNext",
+    "target": "ES2022",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "outDir": "./dist",
+    "types": ["vitest", "node"],
+    "forceConsistentCasingInFileNames": true,
+    "declaration": true,
+    "composite": true,
+    "moduleResolution": "Node",
+    "allowSyntheticDefaultImports": true
+  },
+  "include": ["**/*.ts"],
+  "exclude": ["node_modules", "dist", "__tests__"]
+}

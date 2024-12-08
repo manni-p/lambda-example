@@ -1,0 +1,26 @@
+version: '3.8'
+
+networks:
+  my_network:
+    driver: bridge
+
+services:
+  localstack:
+    image: localstack/localstack
+    container_name: localstack
+    environment:
+      - SERVICES=apigateway,s3,lambda,secretsmanager,cloudwatch,logs,sqs
+      - DEBUG=1
+      - DEFAULT_REGION=eu-west-2
+      - AWS_ACCESS_KEY_ID=mock_access_key
+      - AWS_SECRET_ACCESS_KEY=mock_secret_key
+    ports:
+      - '4566:4566'
+      - '4510-4559:4510-4559'
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - my_network
+
+volumes:
+  mssql_data:
